@@ -8,6 +8,7 @@ import javax.naming.Context;
 import javax.naming.ldap.InitialLdapContext;
 import javax.naming.ldap.LdapContext;
 
+import org.junit.After;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
@@ -42,4 +43,9 @@ public class LdapConnectorTest extends Mockito {
 		}
 	}
 
+	@After 
+	public void tearDown() {
+		LdapConnector.tearDown();
+	}
+	
 }

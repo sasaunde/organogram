@@ -16,7 +16,9 @@ import javax.naming.ldap.LdapContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -59,6 +61,11 @@ public class DirectoryTest extends Mockito {
 		
 		when(mockContext.search(any(String.class), any(String.class), any(SearchControls.class))).thenReturn(results);
 		
+	}
+	
+	@After 
+	public void tearDown() {
+		LdapConnector.tearDown();
 	}
 	
 	@Test

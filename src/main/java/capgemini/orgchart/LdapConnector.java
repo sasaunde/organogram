@@ -84,7 +84,10 @@ public class LdapConnector {
 	 * @throws NamingException
 	 */
 	public static synchronized LdapConnector getInstance(ContextFactory factory) throws NamingException {
+		
 		if (instance == null){// || !factory.getClass().getName().equals(contextFactoryClassName)) {
+
+			log.debug("Non-default get instance called with factory " + factory.getClass().getName());
 
 			instance = new LdapConnector(factory);
 
@@ -109,6 +112,13 @@ public class LdapConnector {
 	 */
 	public String getLdapSearchBase() {
 		return ldapSearchBase;
+	}
+	
+	/**
+	 * Reset singleton
+	 */
+	public static synchronized void tearDown() {
+		instance = null;
 	}
 
 }

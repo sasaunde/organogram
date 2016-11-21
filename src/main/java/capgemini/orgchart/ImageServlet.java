@@ -53,7 +53,7 @@ public class ImageServlet extends HttpServlet {
 
 			} catch (NamingException e) {
 				
-				log.debug(e);
+				log.info(e);
 				
 				response.setContentType("image/png");
 				InputStream in = getClass().getResourceAsStream("/person.png");

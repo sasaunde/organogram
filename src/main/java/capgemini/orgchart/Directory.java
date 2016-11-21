@@ -57,8 +57,7 @@ public class Directory extends HttpServlet {
 
              //make sure there is not another item available, there should be only 1 match
              if(results.hasMoreElements()) {
-                 System.err.println("Matched multiple users for the name: " + firstName + " " + surname);
-                 //return null;
+                 log.warn("Matched multiple users for the name: " + firstName + " " + surname);
                  
              }
          } else {
@@ -83,8 +82,7 @@ public class Directory extends HttpServlet {
 
             //make sure there is not another item available, there should be only 1 match
             if(results.hasMoreElements()) {
-                System.err.println("Matched multiple users for the principal: " + email);
-                //return null;
+                log.warn("Matched multiple users for the principal: " + email);
                 
             }
         } else {
