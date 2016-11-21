@@ -8,7 +8,6 @@ import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.log4j.Logger;
-import org.junit.Before;
 
 /**
  * Start the embedded Tomcat instance on port 11111 and listen for input
